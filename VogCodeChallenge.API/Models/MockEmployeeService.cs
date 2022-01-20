@@ -1,8 +1,9 @@
 ﻿using System.Collections.Generic;
+using VogCodeChallenge.API.Interfaces;
 
 namespace VogCodeChallenge.API.Models
 {
-    public class EmployeeSeedData
+    public class MockEmployeeService : IEmployeeService
     {
         private List<Employee> _employeeList = new List<Employee>()
         {
