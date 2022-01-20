@@ -4,10 +4,12 @@ namespace VogCodeChallenge.API.Models
 {
     public class Department
     {
+        public int Id { get; set; }
+
         public string Name { get; set; }
 
         public string Address { get; set; }
 
-        private List<Employee> EmployeeList = new List<Employee>();
+        public IList<Employee> EmployeeList { get; set; }
     }
 }

@@ -1,5 +1,6 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using System.Collections.Generic;
+using System.Linq;
 using VogCodeChallenge.API.Interfaces;
 using VogCodeChallenge.API.Models;
 
@@ -20,12 +21,11 @@ namespace VogCodeChallenge.API
             return _employeeService.GetAll();
         }
 
-        // GET api/employees/{departmentId}
-        [HttpGet("{departmentId}")]
+        // GET api/employees/department/{departmentId}
+        [HttpGet("department/{departmentId}")]
         public IList<Employee> Get(int departmentId)
         {
-            // TODO: change to grab only the employees with the specified dept id..
-            return _employeeService.ListAll();
+            return _employeeService.DeptList.Where(d => d.Id == departmentId).SelectMany(d => d.EmployeeList).ToList();
         }
     }
 }
