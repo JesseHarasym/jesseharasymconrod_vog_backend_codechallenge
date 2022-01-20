@@ -2,11 +2,9 @@
 using System.Collections.Generic;
 using VogCodeChallenge.API.Models;
 
-// For more information on enabling Web API for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
-
 namespace VogCodeChallenge.API
 {
-    [Route("api/employees")]
+    [Route("api/[controller]")]
     [ApiController]
     public class EmployeesController : ControllerBase
     {
